@@ -1,0 +1,179 @@
+# Welcome to Serverless!
+#
+# For full config options, check the docs:
+#    https://serverless.com/framework/docs/
+#    https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+
+service: ${self:custom.packageName}
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ${self:custom.awsRegion}
+
+# you can add statements to the Lambda function's IAM Role here
+#  iamRoleStatements:
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:ListBucket"
+#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+#    - Effect: "Allow"
+#      Action:
+#        - "s3:PutObject"
+#      Resource:
+#        Fn::Join:
+#          - ""
+#          - - "arn:aws:s3:::"
+#            - "Ref" : "ServerlessDeploymentBucket"
+#            - "/*"
+
+custom:
+  packageFile: ./package.json
+  packageName: ${file(${self:custom.packageFile}):name}
+  appConfigFile: ./app.config.json
+  effectiveStage: ${opt:stage, self:provider.stage}
+  awsRegion: ${file(${self:custom.appConfigFile}):aws_region}
+  publicS3Bucket: ${file(${self:custom.appConfigFile}):public_s3_bucket}
+  cfStackName: ${self:service}-${self:custom.effectiveStage}
+  cfServiceEndpoint: ${cf:${self:custom.cfStackName}.ServiceEndpoint}
+  apiGatewayDomain:
+    Fn::Join:
+      - ""
+      - - Ref: "ApiGatewayRestApi"
+        - ".execute-api.${self:custom.awsRegion}.amazonaws.com"
+  healthCheckPath: "/${self:custom.effectiveStage}/api/health-check"
+
+
+# you can define service wide environment variables here
+#  environment:
+#    variable1: value1
+
+# https://serverless.com/framework/docs/providers/aws/guide/packaging/
+package:
+  exclude:
+    - ./.env*
+    - ./secure_config.*.json
+    - ./src-koa/**
+    - ./src-nuxt/**
+  include:
+    - ./src-nuxt/static/**
+
+functions:
+  app:
+    handler: server_serverless.handler
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+    timeout: 29
+    memorySize: 2048
+    environment:
+      NODE_ENV: production
+      APP_STAGE: ${self:custom.effectiveStage}
+      DEBUG_APIGATEWAY_DOMAIN: ${self:custom.apiGatewayDomain}
+      DEBUG_CF_SERVICE_ENDPOINT: ${self:custom.cfServiceEndpoint}
+
+
+
+# you can add CloudFormation resource templates here
+resources:
+  Resources:
+    CloudFrontDistribution:
+      # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Enabled: true
+          Origins:
+            - Id: Custom-apigateway-endpoint
+              DomainName: ${self:custom.apiGatewayDomain}
+              OriginPath: /${self:custom.effectiveStage}
+              CustomOriginConfig:
+                OriginProtocolPolicy: https-only
+            - Id: S3-static-public
+              DomainName: "${self:custom.publicS3Bucket}.s3.amazonaws.com"
+              OriginPath: /${self:custom.packageName}/${self:custom.effectiveStage}
+              S3OriginConfig:
+                OriginAccessIdentity: ''
+          DefaultCacheBehavior:
+            TargetOriginId: Custom-apigateway-endpoint
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
+              - PUT
+              - PATCH
+              - POST
+              - DELETE
+            ViewerProtocolPolicy: redirect-to-https
+            Compress: true
+            ForwardedValues:
+              Cookies:
+                Forward: all
+              Headers:
+                - Accept
+                - Accept-Charset
+                - Accept-Datetime
+                - Accept-Encoding
+                - Accept-Language
+                - Authorization
+                - CloudFront-Forwarded-Proto
+                - Origin
+                - Referer
+              QueryString: true
+            MinTTL: 0
+            MaxTTL: 0
+            DefaultTTL: 0
+          CacheBehaviors:
+            - PathPattern: /_nuxt/*
+              TargetOriginId: S3-static-public
+              AllowedMethods:
+                - GET
+                - HEAD
+                - OPTIONS
+              ViewerProtocolPolicy: https-only
+              Compress: true
+              ForwardedValues:
+                QueryString: false
+        Tags:
+          - Key: APP_STAGE
+            Value: ${self:custom.effectiveStage}
+          - Key: Name
+            Value: ${self:custom.packageName}/${self:custom.effectiveStage}
+    HealthCheck:
+      # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html
+      Type: AWS::Route53::HealthCheck
+      Properties:
+        HealthCheckConfig:
+          Type: HTTPS
+          FullyQualifiedDomainName: ${self:custom.apiGatewayDomain}
+          ResourcePath: ${self:custom.healthCheckPath}
+          MeasureLatency: true
+        HealthCheckTags:
+          - Key: Name
+            Value: ${self:custom.apiGatewayDomain}
+  Outputs:
+    CloudFrontDomain:
+      Value:
+        Fn::GetAtt:
+          - CloudFrontDistribution
+          - DomainName
+
+#
+#resources:
+#  Resources:
+#    NewResource:
+#      Type: AWS::S3::Bucket
+#      Properties:
+#        BucketName: my-new-bucket
+#  Outputs:
+#     NewOutput:
+#       Description: "Description for the output"
+#       Value: "Some output value"

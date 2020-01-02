@@ -1,0 +1,31 @@
+{
+  "name": "generator-suf-stack-aws-koa-nuxt",
+  "version": "0.0.1",
+  "description": "SUF-stack yeoman generator for AWS/Koa.js/Nuxt.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suf-stack/generator-suf-stack-aws-koa-nuxt.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": {
+    "name": "Brad Ito",
+    "email": "brad@bradito.me",
+    "url": "https://bradito.me/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suf-stack/generator-suf-stack-aws-koa-nuxt/issues"
+  },
+  "homepage": "https://github.com/suf-stack/generator-suf-stack-aws-koa-nuxt#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "yeoman-generator": "^4.4.0",
+    "yosay": "^2.0.2"
+  }
+}
