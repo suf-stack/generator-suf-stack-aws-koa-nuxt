@@ -13,6 +13,8 @@
     "gulp-staging": "gulp publish_static_staging",
     "deploy-prod": "npm run build-prod && npm run gulp-prod && serverless deploy --verbose --stage prod",
     "deploy-staging": "npm run build-staging && npm run gulp-staging && serverless deploy --verbose --stage staging",
+    "logs-prod": "serverless logs --function app --stage prod -t",
+    "logs-staging": "serverless logs --function app --stage staging -t",
     "rollup": "rollup -c",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"

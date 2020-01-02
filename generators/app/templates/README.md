@@ -26,6 +26,8 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
 ## Develop
 
+Build the Nuxt.js app and run both frontend and backend locally:
+
 ```bash
 yarn run dev
 ```
@@ -34,16 +36,38 @@ This sets you up with local development of your app.  Changes made to your backe
 trigger automatic loading of the new code via nodemon.  Changes made to your front (Nuxt) code
 trigger hot-reloading in your browser.
 
+View webpack bundle sizes:
+
+```bash
+yarn run analyze
+```
+
 ## Deploy to Staging
+
+Build, bundle, upload to S3, and deploy via serverless:
 
 ```bash
 yarn run deploy-staging
 ```
 
+View the most recent log messages from the server in staging:
+
+```bash
+yarn run logs-staging
+```
+
 ## Deploy to Production
+
+Build, bundle, upload to S3, and deploy via serverless:
 
 ```bash
 yarn run deploy-prod
+```
+
+View the most recent log messages from the server in production:
+
+```bash
+yarn run logs-prod
 ```
 
 To use your own domain name for your app, see:
