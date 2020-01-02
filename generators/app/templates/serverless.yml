@@ -35,6 +35,9 @@ provider:
 #            - "Ref" : "ServerlessDeploymentBucket"
 #            - "/*"
 
+plugins:
+  - serverless-prune-plugin
+
 custom:
   packageFile: ./package.json
   packageName: ${file(${self:custom.packageFile}):name}
@@ -48,6 +51,10 @@ custom:
       - - Ref: "ApiGatewayRestApi"
         - ".execute-api.${self:custom.awsRegion}.amazonaws.com"
   healthCheckPath: "/${self:custom.effectiveStage}/api/health-check"
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 3
 
 # https://serverless.com/framework/docs/providers/aws/guide/packaging/
 package:
