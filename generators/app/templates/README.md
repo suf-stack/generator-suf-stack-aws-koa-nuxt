@@ -6,7 +6,7 @@
 
 Using:
 
-- [Serverless Framework](https://serverless.com/)
+- [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/intro/)
   * Infrastructure as code
   * Functions as a Service (pay only for what you use, scale up automatically)
   * [Amazon AWS](https://aws.amazon.com/)
