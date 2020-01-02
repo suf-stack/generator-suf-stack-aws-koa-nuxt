@@ -8,7 +8,7 @@ A SUF-stack app enables the serverless deployment of
  both an optimized frontend and an
  extendable/secure backend.  All code is in the same language (modern transpiled Javascript) and deployed at the same time.
 
-## Using:
+## Using
 
 - [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/intro/)
   * Infrastructure as code

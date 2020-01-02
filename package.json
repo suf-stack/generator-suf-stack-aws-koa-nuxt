@@ -1,6 +1,6 @@
 {
   "name": "generator-suf-stack-aws-koa-nuxt",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "SUF-stack yeoman generator for AWS/Koa.js/Nuxt.js",
   "main": "index.js",
   "scripts": {
