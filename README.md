@@ -45,6 +45,7 @@ A SUF-stack app enables the serverless deployment of
 
 ## Requirements
 
+- [Yeoman](https://yeoman.io/)
 - Node.js 10+
 - yarn
 - AWS account
