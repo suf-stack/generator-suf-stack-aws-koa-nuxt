@@ -8,6 +8,16 @@ A SUF-stack app enables the serverless deployment of
  both an optimized frontend and an
  extendable/secure backend.  All code is in the same language (modern transpiled Javascript) and deployed at the same time.
 
+## Quick Start
+
+```bash
+npm install -g yeoman
+npm install -g generator-suf-stack-aws-koa-nuxt
+mkdir <appname>
+cd <appname>
+yo suf-stack-aws-koa-nuxt
+```
+
 ## Using
 
 - [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/intro/)
