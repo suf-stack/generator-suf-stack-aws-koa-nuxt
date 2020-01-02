@@ -90,6 +90,7 @@ resources:
       Properties:
         DistributionConfig:
           Enabled: true
+          Comment: ${self:custom.packageName}/${self:custom.effectiveStage}
           Origins:
             - Id: Custom-apigateway-endpoint
               DomainName: ${self:custom.apiGatewayDomain}
