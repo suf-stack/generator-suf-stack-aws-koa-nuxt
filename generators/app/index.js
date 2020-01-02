@@ -7,7 +7,7 @@ module.exports = class extends Generator {
   async prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the ${chalk.green('generator-nuxt-express-serverless')} generator!`)
+      yosay(`Welcome to the ${chalk.green('suf-stack-aws-koa-nuxt')} generator!`)
     );
 
     const qualifier_answers = await this.prompt([
@@ -20,9 +20,9 @@ module.exports = class extends Generator {
 
     if (!qualifier_answers.has_s3_bucket) {
       this.log(
-        yosay(chalk.red(`Please setup an S3 bucket before continuing`))
+        yosay(chalk.red('Please setup an S3 bucket before continuing'))
       )
-      throw new Error('require S3 bucket')
+      this.env.error('Please setup an S3 bucket before continuing')
     }
 
     const answers = await this.prompt([
