@@ -1,10 +1,10 @@
 const { src } = require('gulp')
 const rename = require('gulp-rename')
 const awspublish = require('gulp-awspublish')
-const mypackage = require('./package.json')
+const packageconfig = require('./package.json')
 const appconfig = require('./app.config.json')
 
-const package_name = mypackage.name
+const package_name = packageconfig.name
 
 // create a new publisher using S3 options
 // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property

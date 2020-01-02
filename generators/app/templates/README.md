@@ -1,22 +1,52 @@
-# koa-test-init
+# <%= appname %>
 
-> My exquisite Nuxt.js project
+> <%= appdescription %>
 
-## Build Setup
+## Serverless Universal Full-Stack (SUF)-stack app
 
-``` bash
-# install dependencies
-$ yarn install
+Using:
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
+- [Serverless Framework](https://serverless.com/)
+  * Infrastructure as code
+  * Functions as a Service (pay only for what you use, scale up automatically)
+  * [Amazon AWS](https://aws.amazon.com/)
+- [Koa.js](https://koajs.com/)
+  * backend web framework in Node.js (Javascript)
+- [Nuxt.js](https://nuxtjs.org/)
+  * Universal [Vue.js](https://vuejs.org/) Framework
+  * Webpack orchestration
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
+## Setup
 
-# generate static project
-$ yarn run generate
+This app deploys to AWS.  Before using it, make sure to have an AWS account,
+and AWS user (IAM) credentials.  For help, see the aws-cli documentation:
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
+
+## Develop
+
+```bash
+yarn run dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+This sets you up with local development of your app.  Changes made to your backend code
+trigger automatic loading of the new code via nodemon.  Changes made to your front (Nuxt) code
+trigger hot-reloading in your browser.
+
+## Deploy to Staging
+
+```bash
+yarn run deploy-staging
+```
+
+## Deploy to Production
+
+```bash
+yarn run deploy-prod
+```
+
+To use your own domain name for your app, see:
+
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html
+

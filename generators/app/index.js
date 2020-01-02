@@ -74,6 +74,15 @@ module.exports = class extends Generator {
         description: this.answers.appdescription
       }
     )
+
+    this.fs.copyTpl(
+      this.templatePath('README.md'),
+      this.destinationPath('README.md'),
+      {
+        appname: this.answers.appname,
+        appdescription: this.answers.appdescription
+      }
+    )
   }
 
   install() {
@@ -82,5 +91,6 @@ module.exports = class extends Generator {
       npm: false,
       yarn: true
     });
+    this.log(`Successfully installed your new SUF-stack app!  Be sure to read the ${chalk.green('README.md')}`)
   }
 };
