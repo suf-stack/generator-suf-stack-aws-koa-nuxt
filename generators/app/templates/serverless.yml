@@ -42,19 +42,12 @@ custom:
   effectiveStage: ${opt:stage, self:provider.stage}
   awsRegion: ${file(${self:custom.appConfigFile}):aws_region}
   publicS3Bucket: ${file(${self:custom.appConfigFile}):public_s3_bucket}
-  cfStackName: ${self:service}-${self:custom.effectiveStage}
-  cfServiceEndpoint: ${cf:${self:custom.cfStackName}.ServiceEndpoint}
   apiGatewayDomain:
     Fn::Join:
       - ""
       - - Ref: "ApiGatewayRestApi"
         - ".execute-api.${self:custom.awsRegion}.amazonaws.com"
   healthCheckPath: "/${self:custom.effectiveStage}/api/health-check"
-
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
 
 # https://serverless.com/framework/docs/providers/aws/guide/packaging/
 package:
@@ -65,6 +58,10 @@ package:
     - ./src-nuxt/**
   include:
     - ./src-nuxt/static/**
+
+# you can define service wide environment variables here
+#  environment:
+#    variable1: value1
 
 functions:
   app:
@@ -77,12 +74,7 @@ functions:
     environment:
       NODE_ENV: production
       APP_STAGE: ${self:custom.effectiveStage}
-      DEBUG_APIGATEWAY_DOMAIN: ${self:custom.apiGatewayDomain}
-      DEBUG_CF_SERVICE_ENDPOINT: ${self:custom.cfServiceEndpoint}
 
-
-
-# you can add CloudFormation resource templates here
 resources:
   Resources:
     CloudFrontDistribution:
@@ -165,15 +157,3 @@ resources:
         Fn::GetAtt:
           - CloudFrontDistribution
           - DomainName
-
-#
-#resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
