@@ -1,8 +1,7 @@
 {
-  "name": "koa-test-init",
-  "version": "1.0.0",
-  "description": "My exquisite Nuxt.js project",
-  "author": "Brad Ito <brad@retina.ai>",
+  "name": "*replaceme*",
+  "version": "0.0.1",
+  "description": "*replaceme*",
   "private": true,
   "scripts": {
     "analyze": "nuxt build --config-file ./nuxt.config.js --analyze",
