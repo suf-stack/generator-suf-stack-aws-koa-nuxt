@@ -36,7 +36,7 @@ A SUF-stack app enables the serverless deployment of
   * Path-based routing
   * Pre-processors for SCSS, LESS, Stylus, etc
   * Eslint based automated linting
-  * [plugin/module ecosystem](https://github.com/nuxt-community/awesome-nuxt)
+  * Ecosystems for [Nuxt.js](https://github.com/nuxt-community/awesome-nuxt) and [Vue.js](https://github.com/vuejs/awesome-vue)
 - Node.js backend (Koa.js)
   * Modern and Lightweight
   * Native support for async/await
