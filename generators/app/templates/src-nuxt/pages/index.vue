@@ -10,13 +10,17 @@
       </h2>
       <div class="links">
         <a
+          href="https://serverless.com/framework/docs/providers/aws/guide/intro/"
+          target="_blank"
+          class="button--red">Serverless Framework</a>
+        <a
+          href="https://koajs.com/"
+          target="_blank"
+          class="button--grey">Koa.js Backend</a>
+        <a
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--green">Nuxt.js (Vue) Universal Frontend</a>
       </div>
     </div>
   </section>

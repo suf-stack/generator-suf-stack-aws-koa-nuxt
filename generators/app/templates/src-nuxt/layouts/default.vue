@@ -38,6 +38,20 @@ html {
   background-color: #3b8070;
 }
 
+.button--red {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #eb6358;
+  color: #eb6358;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--red:hover {
+  color: #fff;
+  background-color: #eb6358;
+}
+
 .button--grey {
   display: inline-block;
   border-radius: 4px;
