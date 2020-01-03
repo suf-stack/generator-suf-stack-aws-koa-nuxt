@@ -1,4 +1,10 @@
 {
   "aws_region": "us-east-1",
-  "public_s3_bucket": "*replaceme*"
+  "public_s3_bucket": "*replaceme*",
+  "prod_env": {
+    "APP_BASE_URL": ""
+  },
+  "staging_env": {
+    "APP_BASE_URL": ""
+  }
 }

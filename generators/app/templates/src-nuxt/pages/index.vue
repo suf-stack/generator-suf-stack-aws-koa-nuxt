@@ -22,6 +22,9 @@
           target="_blank"
           class="button--green">Nuxt.js (Vue) Universal Frontend</a>
       </div>
+      <div style="padding-top:20px">
+        <nuxt-link to="/health-check">health-check</nuxt-link>
+      </div>
     </div>
   </section>
 </template>

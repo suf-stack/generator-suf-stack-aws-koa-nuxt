@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "analyze": "nuxt build --config-file ./nuxt.config.js --analyze",
-    "dev": "cross-env NODE_ENV=development nodemon server_local.js --watch src-koa",
-    "build-dev": "nuxt build --config-file ./nuxt.config.js && npm run rollup",
+    "dev": "cross-env NODE_ENV=development env-cmd -f ./.env nodemon server_local.js --watch src-koa",
+    "build-dev": "env-cmd -f ./.env nuxt build --config-file ./nuxt.config.js && npm run rollup",
     "build-prod": "nuxt build --config-file ./nuxt.config.prod.js && npm run rollup",
     "build-staging": "nuxt build --config-file ./nuxt.config.staging.js && npm run rollup",
     "gulp-prod": "gulp publish_static_prod",
@@ -24,9 +24,10 @@
   },
   "dependencies": {
     "@koa/router": "^8.0.5",
-    "@nuxtjs/axios": "^5.0.0",
+    "axios": "^0.19.0",
     "bunyan": "^1.8.12",
     "cross-env": "^5.2.0",
+    "env-cmd": "^10.0.1",
     "koa": "^2.5.2",
     "nuxt-start": "^2.11.0",
     "serverless-http": "^2.3.0"

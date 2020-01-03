@@ -1062,25 +1062,6 @@
     webpack-node-externals "^1.7.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/axios@^5.0.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.9.0.tgz#08c20fa4c9936bf0015733e1598860032a1a237a"
-  integrity sha512-jc3KOHlFA5zdijiuYSRk0nzmqGSoP30LasD5J5XxUDpc/YlzwAL+Z0+kLcU5IwlrEDkg4VwkhZd/9OG6RkA2CQ==
-  dependencies:
-    "@nuxtjs/proxy" "^1.3.3"
-    axios "^0.19.0"
-    axios-retry "^3.1.2"
-    consola "^2.11.1"
-    defu "^0.0.3"
-
-"@nuxtjs/proxy@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-1.3.3.tgz#3de3d9f073e8e57167168100940be2a824a220e0"
-  integrity sha512-ykpCUdOqPOH79mQG30QfWZmbRD8yjTD+TTSBbwow5GkROUQEtXw+HE+q6i+YFpuChvgJNbwVrXdZ3YmfXbZtTw==
-  dependencies:
-    consola "^2.5.6"
-    http-proxy-middleware "^0.19.1"
-
 "@nuxtjs/youch@^4.2.3":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/youch/-/youch-4.2.3.tgz#36f8b22df5a0efaa81373109851e1d857aca6bed"
@@ -1923,13 +1904,6 @@ aws-sdk@^2.389.0, aws-sdk@^2.592.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-axios-retry@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.1.2.tgz#4f4dcbefb0b434e22b72bd5e28a027d77b8a3458"
-  integrity sha512-+X0mtJ3S0mmia1kTVi1eA3DAC+oWnT2A29g3CpkzcBPMT6vJm+hn/WiV9wPt/KXLHVmg5zev9mWqkPx7bHMovg==
-  dependencies:
-    is-retry-allowed "^1.1.0"
-
 axios@^0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
@@ -2055,7 +2029,7 @@ bl@^1.0.0:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
-bluebird@^3.1.1, bluebird@^3.5.5, bluebird@^3.7.2:
+bluebird@^3.1.1, bluebird@^3.4.7, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -2794,6 +2768,11 @@ commander@^2.18.0, commander@^2.19.0, commander@^2.20.0, commander@^2.9.0, comma
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
+commander@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-3.0.2.tgz#6837c3fb677ad9933d1cfba42dd14d5117d6b39e"
+  integrity sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==
+
 commander@~2.8.1:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.8.1.tgz#06be367febfda0c330aa1e2a072d3dc9762425d4"
@@ -2886,7 +2865,7 @@ connect@^3.7.0:
     parseurl "~1.3.3"
     utils-merge "1.0.1"
 
-consola@^2.10.0, consola@^2.10.1, consola@^2.11.1, consola@^2.5.6, consola@^2.6.0, consola@^2.9.0:
+consola@^2.10.0, consola@^2.10.1, consola@^2.11.1, consola@^2.6.0, consola@^2.9.0:
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/consola/-/consola-2.11.1.tgz#1df259c0a7aef44c9eb4f448e3a20ba0850a65e7"
   integrity sha512-zFH/xFAE/KHJiWqwyTEDmdFe34Swc0pqMKJeowTvR3irepx8kKPu8bjaKzRd+RLjLH+0TvFxFBnohbSUQ+hOsw==
@@ -3082,7 +3061,7 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^6.0.5:
+cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
   integrity sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
@@ -3357,7 +3336,7 @@ debug@=3.1.0, debug@~3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.0, debug@^3.1.0, debug@^3.2.6:
+debug@^3.1.0, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
@@ -3522,11 +3501,6 @@ defu@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/defu/-/defu-0.0.1.tgz#74dc4d64e401d7f95c6755fe98bc5cd688833a8f"
   integrity sha512-Pz9yznbSzVTNA67lcfqVnktROx2BrrBBcmQqGrfe0zdiN5pl5GQogLA4uaP3U1pR1LHIZpEYTAh2sn+v4rH1dA==
-
-defu@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/defu/-/defu-0.0.3.tgz#bdc3ea1e1ab2120d4d4a129147f3ba9b7f9fe103"
-  integrity sha512-u/fe4fBwrD0KACvI0sYWTWFzooqONZq8ywPnK0ZkAgLNwaDTKpSWvMiiU4QmzhrQCXu8Y0+HIWP8amE18lsL4A==
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -3796,6 +3770,14 @@ entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.0.0.tgz#68d6084cab1b079767540d80e56a39b423e4abf4"
   integrity sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
 
+env-cmd@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/env-cmd/-/env-cmd-10.0.1.tgz#bcaedad78a0172c62113890dd4efec36d2ba0775"
+  integrity sha512-vaV0BRwj+6+fd8NmcvSoRhrTxQl07fS3jxIdPYe7d+NlJj4hV/FSMmWcKau/qpbe5jeFdDI757//ToJW70ad2Q==
+  dependencies:
+    commander "^3.0.0"
+    cross-spawn "^6.0.0"
+
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.7.tgz#4684d71779ad39af177e3f007996f7c67c852618"
@@ -3930,10 +3912,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-standard@^14.1.0:
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-14.1.0.tgz#b23da2b76fe5a2eba668374f246454e7058f15d4"
-  integrity sha512-EF6XkrrGVbvv8hL/kYa/m6vnvmUT+K82pJJc4JJVMM6+Qgqh0pnwprSxdduDLB9p/7bIxD+YV5O0wfb8lmcPbA==
+eslint-config-standard@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-12.0.0.tgz#638b4c65db0bd5a41319f96bba1f15ddad2107d9"
+  integrity sha512-COUz8FnXhqFitYj4DTqHzidjIL/t4mumGZto5c7DrBpvWoie+Sn3P4sLEzUGeYhRElWuFEf8K1S1EfvD1vixCQ==
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
@@ -4185,11 +4167,6 @@ event-emitter@^0.3.5, event-emitter@~0.3.5:
   dependencies:
     d "1"
     es5-ext "~0.10.14"
-
-eventemitter3@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.0.tgz#d65176163887ee59f386d64c82610b696a4a74eb"
-  integrity sha512-qerSRB0p+UDEssxTtm6EDKcE7W4OaoisfIMl4CngyEhjpYglocpNg6UEqCvemdGhosAsg4sO2dXJOdyBifPGCg==
 
 events@1.1.1:
   version "1.1.1"
@@ -4641,13 +4618,6 @@ follow-redirects@1.5.10:
   integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   dependencies:
     debug "=3.1.0"
-
-follow-redirects@^1.0.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.9.0.tgz#8d5bcdc65b7108fe1508649c79c12d732dcedb4f"
-  integrity sha512-CRcPzsSIbXyVDl0QI01muNDu69S8trU4jArW9LpOt2WtC6LyUJetcIrmfHsRBx7/Jb6GHJUiuqyYxPooFfNt6A==
-  dependencies:
-    debug "^3.0.0"
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
@@ -5360,25 +5330,6 @@ http-errors@^1.6.3, http-errors@^1.7.3, http-errors@~1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
-http-proxy-middleware@^0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-0.19.1.tgz#183c7dc4aa1479150306498c210cdaf96080a43a"
-  integrity sha512-yHYTgWMQO8VvwNS22eLLloAkvungsKdKTLO8AJlftYIKNfJr3GK3zK0ZCfzDDGUBttdGc8xFy1mCitvNKQtC3Q==
-  dependencies:
-    http-proxy "^1.17.0"
-    is-glob "^4.0.0"
-    lodash "^4.17.11"
-    micromatch "^3.1.10"
-
-http-proxy@^1.17.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.18.0.tgz#dbe55f63e75a347db7f3d99974f2692a314a6a3a"
-  integrity sha512-84I2iJM/n1d4Hdgc6y2+qY5mDaz2PUVjlg9znE9byl+q0uC3DeByqBGReQu5tpLK0TAqTIXScRUV+dg7+bUPpQ==
-  dependencies:
-    eventemitter3 "^4.0.0"
-    follow-redirects "^1.0.0"
-    requires-port "^1.0.0"
-
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
@@ -5860,7 +5811,7 @@ is-resolvable@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
   integrity sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==
 
-is-retry-allowed@^1.0.0, is-retry-allowed@^1.1.0:
+is-retry-allowed@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz#d778488bd0a4666a3be8a1482b9f2baafedea8b4"
   integrity sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==
@@ -8851,11 +8802,6 @@ require-main-filename@^1.0.1:
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
   integrity sha1-l/cXtp1IeE9fUmpsWqj/3aBVpNE=
 
-requires-port@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-  integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
-
 resolve-dir@^1.0.0, resolve-dir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/resolve-dir/-/resolve-dir-1.0.1.tgz#79a40644c362be82f26effe739c9bb5382046f43"
@@ -9184,6 +9130,13 @@ serverless-http@^2.3.0:
   integrity sha512-z1820kGkw/XlaXCZ3HMA6fY/SQXrbtlQjuTaxB1fMJTe5GJqjQRE0EyLKkeQDT3Qd4nmtfM1p7XEUuNv2chnFA==
   optionalDependencies:
     "@types/aws-lambda" "^8.10.19"
+
+serverless-prune-plugin@^1.4.0:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/serverless-prune-plugin/-/serverless-prune-plugin-1.4.1.tgz#94f43e69989de39647e7dc3e7e0c86db1999aba7"
+  integrity sha512-4kXCqdLoAlsQXZPWM2pzZiO0jAqpFQMIoCTkAK4P6JdrMgg8714yAYTzoRD/IZ4f6eS3GLjMoFOCxlrNA9LbKQ==
+  dependencies:
+    bluebird "^3.4.7"
 
 serverless@^1.60.4:
   version "1.60.4"

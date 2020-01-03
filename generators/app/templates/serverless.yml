@@ -18,6 +18,9 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: ${self:custom.awsRegion}
+  environment:
+    NODE_ENV: production
+    APP_STAGE: ${self:custom.effectiveStage}
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -56,6 +59,7 @@ custom:
     includeLayers: true
     number: 3
 
+
 # https://serverless.com/framework/docs/providers/aws/guide/packaging/
 package:
   exclude:
@@ -66,9 +70,6 @@ package:
   include:
     - ./src-nuxt/static/**
 
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
 
 functions:
   app:
@@ -78,9 +79,8 @@ functions:
       - http: ANY /{proxy+}
     timeout: 29
     memorySize: 2048
-    environment:
-      NODE_ENV: production
-      APP_STAGE: ${self:custom.effectiveStage}
+    environment: ${file(${self:custom.appConfigFile}):${self:custom.effectiveStage}_env}
+
 
 resources:
   Resources:
