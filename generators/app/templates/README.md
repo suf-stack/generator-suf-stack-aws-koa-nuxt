@@ -70,7 +70,18 @@ View the most recent log messages from the server in production:
 yarn run logs-prod
 ```
 
+## Add custom domain names to staging and production
+
 To use your own domain name for your app, see:
 
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html
 
+- add domain name as an AWS Route 53 public hosted zone (e.g. app.com)
+- request/approve AWS ACM SSL certification for `*.app.com`
+- navigate to AWS CloudFront and find the distribution(s) created above:
+  * edit distribution
+  * add domain name as an Alias. example: `www.app.com`
+  * configure ACM certificate
+- edit app.config.json
+  * set appropriate APP_BASE_URL. example: `https://www.app.com`
+- re-deploy your app
