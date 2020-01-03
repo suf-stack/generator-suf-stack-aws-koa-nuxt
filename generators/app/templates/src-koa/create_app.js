@@ -51,7 +51,6 @@ function create_app (nuxt) {
       }, 'COMPLETED')
 
     } catch (err) {
-      console.log('DEBUG: catching error: ' + err)
       // https://github.com/koajs/koa/wiki/Error-Handling
       ctx.status = err.status || 500
       ctx.body = err.message
