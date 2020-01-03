@@ -10,7 +10,7 @@ nuxtConfig.dev = false
  */
 nuxtConfig.env = nuxtConfig.env || {}
 Object.assign(nuxtConfig.env, {
-  ...appConfig.staging_env
+  ...appConfig.prod_env
 })
 
 module.exports = nuxtConfig
