@@ -85,3 +85,15 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-a
 - edit app.config.json
   * set appropriate APP_BASE_URL. example: `https://www.app.com`
 - re-deploy your app
+
+## Configuration
+
+- app.config.json - contains the main configuration for your app
+  * aws_region - The AWS region where your stack is deployed
+  * public_s3_bucket - Your S3 bucket where static and compiled assets are deployed.  Must be publicly accessible
+  * prod_env - Environment variables injected into your production deployment.  Can be read via process.env
+  * staging_env - Environment variables injected into your staging deployment.  Can be read via process.env
+- .env - Environment variables loaded in the local development mode
+  * Should NOT be added to git (is in .gitignore)
+  * Should NOT be deployed to cloud (is excluded in serverless.yml)
+
