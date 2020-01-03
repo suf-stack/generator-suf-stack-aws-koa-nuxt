@@ -65,6 +65,10 @@ module.exports = class extends Generator {
         }
       }
     )
+    this.fs.copy(
+      this.templatePath('.env.orig'),
+      this.destinationPath('.env')
+    )
 
     this.fs.writeJSON(
       this.destinationPath('app.config.json'),
