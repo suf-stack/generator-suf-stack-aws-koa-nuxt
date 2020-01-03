@@ -19,9 +19,9 @@ Using:
 ## Setup
 
 This app deploys to AWS.  Before using it, make sure to have an AWS account,
-and AWS user (IAM) credentials.  For help, see the aws-cli documentation:
+and AWS user (IAM) credentials.  You can use serverless to configure your credentials:
 
-https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+https://serverless.com/framework/docs/providers/aws/cli-reference/config-credentials/
 
 
 ## Develop
