@@ -54,6 +54,8 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    // see https://github.com/sboudrias/mem-fs-editor
+
     this.fs.copy(
       this.templatePath('**'),
       this.destinationRoot(),
