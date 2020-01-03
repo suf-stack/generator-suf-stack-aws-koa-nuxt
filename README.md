@@ -18,6 +18,8 @@ cd <appname>
 yo suf-stack-aws-koa-nuxt
 ```
 
+Be sure to read the README.md that is generated in your project for more details
+
 ## Using
 
 - [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/intro/)
@@ -55,7 +57,7 @@ yo suf-stack-aws-koa-nuxt
 
 ## Requirements
 
-- [Yeoman](https://yeoman.io/)
 - Node.js 10+
 - yarn
+- [Yeoman](https://yeoman.io/)
 - AWS account
