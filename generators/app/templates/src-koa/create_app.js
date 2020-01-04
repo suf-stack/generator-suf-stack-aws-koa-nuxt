@@ -71,7 +71,7 @@ function create_app (nuxt) {
   app.use(api_router.routes())
   app.use(api_router.allowedMethods())
 
-  app.use(ctx => {
+  app.use((ctx) => {
     ctx.status = 200 // koa defaults to 404 when it sees that status is unset
 
     return new Promise((resolve, reject) => {
