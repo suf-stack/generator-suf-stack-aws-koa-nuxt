@@ -118,15 +118,7 @@ resources:
               Cookies:
                 Forward: all
               Headers:
-                - Accept
-                - Accept-Charset
-                - Accept-Datetime
-                - Accept-Encoding
-                - Accept-Language
-                - Authorization
-                - CloudFront-Forwarded-Proto
-                - Origin
-                - Referer
+                - *
               QueryString: true
             MinTTL: 0
             MaxTTL: 0
