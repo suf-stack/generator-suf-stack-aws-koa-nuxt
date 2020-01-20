@@ -118,7 +118,7 @@ resources:
               Cookies:
                 Forward: all
               Headers:
-                - *
+                - '*'
               QueryString: true
             MinTTL: 0
             MaxTTL: 0
