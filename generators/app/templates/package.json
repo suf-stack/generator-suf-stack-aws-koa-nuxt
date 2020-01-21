@@ -6,7 +6,6 @@
   "scripts": {
     "analyze": "nuxt build --config-file ./nuxt.config.js --analyze",
     "dev": "cross-env NODE_ENV=development env-cmd -f ./.env nodemon server_local.js --watch src-koa",
-    "build-dev": "env-cmd -f ./.env nuxt build --config-file ./nuxt.config.js && npm run rollup",
     "build-prod": "nuxt build --config-file ./nuxt.config.prod.js && npm run rollup",
     "build-staging": "nuxt build --config-file ./nuxt.config.staging.js && npm run rollup",
     "gulp-prod": "gulp publish_static_prod",
