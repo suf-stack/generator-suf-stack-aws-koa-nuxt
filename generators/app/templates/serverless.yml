@@ -159,7 +159,7 @@ resources:
           MeasureLatency: true
         HealthCheckTags:
           - Key: Name
-            Value: ${self:custom.apiGatewayDomain}
+            Value: ${self:custom.packageName}/${self:custom.effectiveStage}
   Outputs:
     CloudFrontDomain:
       Value:
