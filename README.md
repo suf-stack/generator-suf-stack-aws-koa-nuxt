@@ -11,7 +11,7 @@ A SUF-stack app enables the serverless deployment of
 ## Quick Start
 
 ```bash
-npm install -g yeoman
+npm install -g yo
 npm install -g generator-suf-stack-aws-koa-nuxt
 mkdir <appname>
 cd <appname>
