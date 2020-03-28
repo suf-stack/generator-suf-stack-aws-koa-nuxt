@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <logo />
       <h1 class="title">
         {{ pkg_name }}
       </h1>
@@ -12,18 +12,29 @@
         <a
           href="https://serverless.com/framework/docs/providers/aws/guide/intro/"
           target="_blank"
-          class="button--red">Serverless Framework</a>
+          class="button--red"
+        >
+          Serverless Framework
+        </a>
         <a
           href="https://koajs.com/"
           target="_blank"
-          class="button--grey">Koa.js Backend</a>
+          class="button--grey"
+        >
+          Koa.js Backend
+        </a>
         <a
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Nuxt.js (Vue) Universal Frontend</a>
+          class="button--green"
+        >
+          Nuxt.js (Vue) Universal Frontend
+        </a>
       </div>
       <div style="padding-top:20px">
-        <nuxt-link to="/health-check">health-check</nuxt-link>
+        <nuxt-link to="/health-check">
+          health-check
+        </nuxt-link>
       </div>
     </div>
   </section>

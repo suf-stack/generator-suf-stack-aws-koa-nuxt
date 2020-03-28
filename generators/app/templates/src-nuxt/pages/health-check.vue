@@ -8,11 +8,6 @@
 import axios_factory from '~/lib/axios_factory'
 
 export default {
-  data () {
-    return {
-      status: 'Failed backend call'
-    }
-  },
   asyncData () {
     const axios = axios_factory()
 
@@ -25,6 +20,11 @@ export default {
       .catch((err) => {
         console.error(err)
       })
+  },
+  data () {
+    return {
+      status: 'Failed backend call'
+    }
   }
 }
 </script>
