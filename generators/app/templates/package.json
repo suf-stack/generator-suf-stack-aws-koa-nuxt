@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "analyze": "nuxt build --config-file ./nuxt.config.js --analyze",
-    "dev": "cross-env NODE_ENV=development env-cmd -f ./.env nodemon server_local.js --watch src-koa",
+    "dev-serve": "cross-env NODE_ENV=development env-cmd -f ./.env node server_local.js",
+    "dev": "npm run rollup && npm run dev-serve",
     "build-prod": "nuxt build --config-file ./nuxt.config.prod.js && npm run rollup",
     "build-staging": "nuxt build --config-file ./nuxt.config.staging.js && npm run rollup",
     "gulp-prod": "gulp publish_static_prod",
@@ -44,7 +45,6 @@
     "gulp": "^4.0.2",
     "gulp-awspublish": "^4.1.0",
     "gulp-rename": "^2.0.0",
-    "nodemon": "^2.0.2",
     "nuxt": "^2.11.0",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.3.3",

@@ -1,6 +1,6 @@
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
-const create_app = require('./src-koa/create_app.js')
+const create_app = require('./dist/create_app.bundle.js')
 
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000

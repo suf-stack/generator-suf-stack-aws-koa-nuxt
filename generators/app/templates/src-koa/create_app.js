@@ -1,8 +1,8 @@
-const Koa = require('koa')
-const Writable = require('stream').Writable
-const bunyan = require('bunyan')
-const api_router = require('./api/index.js')
-const package_config = require('../package.json')
+import Koa from 'koa'
+import { Writable } from 'stream'
+import bunyan from 'bunyan'
+import api_router from './api/index.js'
+import package_config from '../package.json'
 
 /*
  * Log to console
