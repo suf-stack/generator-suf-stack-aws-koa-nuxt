@@ -3,12 +3,6 @@ const appConfig = require('./app.config.json')
 
 nuxtConfig.dev = false
 
-const env = Object.assign(
-  nuxtConfig.env || {},
-  appConfig.prod_env || {}
-)
-nuxtConfig.env = env
-
 /*
  * Inject configured environment variables into the Nuxt universal app
  * Note: These are bundled and sent to the client browser
