@@ -38,6 +38,12 @@ module.exports = {
   modules: [],
 
   /*
+  * Environment variables
+  * https://nuxtjs.org/api/configuration-env/
+  */
+  env: {},
+
+  /*
   ** Build configuration
   */
   build: {
