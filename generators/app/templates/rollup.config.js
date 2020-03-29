@@ -1,6 +1,6 @@
 import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
-import json from 'rollup-plugin-json'
+import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import copy_assets from 'rollup-plugin-copy-assets'
 
 export default [
