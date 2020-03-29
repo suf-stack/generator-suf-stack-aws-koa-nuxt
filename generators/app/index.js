@@ -97,9 +97,7 @@ module.exports = class extends Generator {
   }
 
   install() {
-    // TODO disabling automatic yarn install due to path issues
-    // this.yarnInstall()
-    this.log(`IMPORTANT: run ${chalk.yellow('yarn install')}`)
+    this.yarnInstall()
     this.log(`Successfully installed your new SUF-stack app!  Be sure to also read the ${chalk.green('README.md')}`)
   }
 };
