@@ -74,7 +74,15 @@ module.exports = class extends Generator {
       this.destinationPath('app.config.json'),
       {
         aws_region: this.answers.aws_region,
-        public_s3_bucket: this.answers.public_s3_bucket
+        public_s3_bucket: this.answers.public_s3_bucket,
+        prod_env: {
+          APP_STAGE: "prod",
+          APP_BASE_URL: ""
+        },
+        staging_env: {
+          APP_STAGE: "staging",
+          APP_BASE_URL: ""
+        }
       }
     )
 
