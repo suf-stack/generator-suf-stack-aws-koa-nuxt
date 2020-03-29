@@ -97,11 +97,9 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.installDependencies({
-      bower: false,
-      npm: false,
-      yarn: true
-    });
-    this.log(`Successfully installed your new SUF-stack app!  Be sure to read the ${chalk.green('README.md')}`)
+    // TODO disabling automatic yarn install due to path issues
+    // this.yarnInstall()
+    this.log(`IMPORTANT: run ${chalk.yellow('yarn install')}`)
+    this.log(`Successfully installed your new SUF-stack app!  Be sure to also read the ${chalk.green('README.md')}`)
   }
 };
