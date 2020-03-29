@@ -20,7 +20,6 @@ provider:
   region: ${self:custom.awsRegion}
   environment:
     NODE_ENV: production
-    APP_STAGE: ${self:custom.effectiveStage}
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
