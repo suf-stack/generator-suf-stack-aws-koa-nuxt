@@ -66,7 +66,7 @@ module.exports = class extends Generator {
       }
     )
     this.fs.copy(
-      this.templatePath('.env.orig'),
+      this.templatePath('_env.orig'),
       this.destinationPath('.env')
     )
 
