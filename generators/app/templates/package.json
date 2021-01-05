@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@koa/router": "^8.0.5",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bunyan": "^1.8.12",
     "env-cmd": "^10.0.1",
     "koa": "^2.5.2",
